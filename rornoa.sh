@@ -29,7 +29,8 @@ do
 			echo "8.Practice Problems"
 			echo "9.Resume"
 			echo "10.Vehicle design"
-			echo "11.Exit"
+			echo "11.AI For Chip Design - BMS"
+			echo "12.Exit"
 		echo "Luckiest dynasty to enter : "
 		read choice
 
@@ -244,7 +245,12 @@ do
 			go_to_path
 		elif [ "$choice" -eq 7 ]; then
 			source class_hub.sh
-		elif [ "$choice" -eq 11 ]; then
+		elif [ "$choice" -eq 8 ]; then
+			echo "Welcome to practice battlefield "
+			source pp.sh
+		elif [ "$shcoice" -eq 11 ]; then
+			source ai_chip.sh
+		elif [ "$choice" -eq 12 ]; then
 			break
 		fi
 

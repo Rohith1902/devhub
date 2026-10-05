@@ -13,7 +13,6 @@ git_repo_creation(){
 
 }
 git_push(){
-    source path.sh
     echo "Enter the commit message : "
     read commit 
     git status
