@@ -1,3 +1,5 @@
+
+
 echo "Enter the path of your folder : "
 read path
 if [ -d "$path" ]; then
@@ -6,7 +8,8 @@ if [ -d "$path" ]; then
 	return
 else
 	echo "Invalid territory , try again :( "
-fi
+fi 
+
 
 
 			

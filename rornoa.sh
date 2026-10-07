@@ -30,7 +30,8 @@ do
 			echo "9.Resume"
 			echo "10.Vehicle design"
 			echo "11.AI For Chip Design - BMS"
-			echo "12.Exit"
+			echo "12.Resume Project 567890"
+			echo "13.Exit"
 		echo "Luckiest dynasty to enter : "
 		read choice
 
@@ -248,9 +249,11 @@ do
 		elif [ "$choice" -eq 8 ]; then
 			echo "Welcome to practice battlefield "
 			source pp.sh
-		elif [ "$shcoice" -eq 11 ]; then
+		elif [ "$hcoice" -eq 11 ]; then
 			source ai_chip.sh
-		elif [ "$choice" -eq 12 ]; then
+		elif [ "$choice" -eq 12]; then
+			source prj.sh
+		elif [ "$choice" -eq 13 ]; then
 			break
 		fi
 
