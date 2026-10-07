@@ -1,4 +1,15 @@
 import datetime
+import mysql.connector
+
+db = mysql.connector.connect(
+    host = "localhost",
+    user = "todo_user",
+    password = "todo123",
+    database = "tool_db"
+
+)
+
+cursor = db.cursor()
 
 
 def build_to(sub):
@@ -9,10 +20,23 @@ def build_to(sub):
                 break
             sub.append(a)
             print("Today's schedule : ")
+
             for i in sub:            
                 print(i)
             print("=====================\n")
 
+            """  MYSQL part"""
+
+            sql = """ 
+                INSERT INTO tasks (task,task_date)
+                VALUES(%s,%s)       
+             """
+            values = (a,datetime.date.today())
+
+            cursor.execute(sql,values)
+            db.commit()
+
+            print("Task saved to MySQL !!")
 def block():
     sub = []
     while True:
@@ -82,9 +106,25 @@ def block():
             print("Invalid option")
 
 def showc(sub):
-    print("Today's schedule : ")
+    '''print("Today's schedule : ")
     for i in sub:            
-        print(i)
+        print(i)'''
+    
+    sql = """
+        SELECT id , task ,completed
+        FROM tasks
+        WHERE task_date = %s    
+    """
+    cursor.execute(sql,(datetime.date.today(),))
+    tasks = cursor.fetchall()
+
+    print("Today's schedule : ")
+
+    for task_id , task , complete in tasks:
+        status = "completed" if "completed" else "Incomplete"
+        print(task_id,task,"-",status)
+
+
 
 
 print("\n\n     Welcome to TO-DO list ")
@@ -95,7 +135,7 @@ print("\n")
 
 current_time = datetime.datetime.now().time()
 print(current_time)
-limit_time = datetime.time(8,45)
+limit_time = datetime.time(22,45)
 
 
 
