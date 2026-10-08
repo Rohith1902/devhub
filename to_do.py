@@ -28,7 +28,7 @@ def build_to(sub):
             """  MYSQL part"""
 
             sql = """ 
-                INSERT INTO tasks (task,task_date)
+                INSERT INTO daily_tasks (tasks,task_date)
                 VALUES(%s,%s)       
              """
             values = (a,datetime.date.today())
@@ -69,16 +69,25 @@ def block():
             else:
                     completed =[]
                     n=1
-                    print("Today's schedule : ")
-                    for i in sub:
-                        print(n,i)
-                        n += 1
+                    sql = """
+                        SELECT id,tasks,completed
+                        FROM daily_tasks
+                        WHERE task_date = %s
+
+                    """
+
+                    cusrsor.execute(sql,(datetime.date.today(),))
+                    tasks = cursor.fetchall()
+                    print("Today's Schedule")
+
+                    for taks_id, task,complete in tasks:
+                        print(task_id,task)
                     while True:
                         comp = int(input("\n Tell me which index you completed today (0 for complete): "))
                        
                         if comp == 0 :
                             break
-                        elif 1 <= comp <= len(sub) and sub[comp-1] != "0":
+                        elif 1 <= comp <= len(tasks):
                             completed.append(sub[comp-1])
                             sub[comp-1] = "0"
                         elif 1 <= comp <= len(sub):
@@ -109,10 +118,10 @@ def showc(sub):
     '''print("Today's schedule : ")
     for i in sub:            
         print(i)'''
-    
+    #--------------------------------MYSQL---------------------------
     sql = """
         SELECT id , task ,completed
-        FROM tasks
+        FROM daily_tasks
         WHERE task_date = %s    
     """
     cursor.execute(sql,(datetime.date.today(),))
@@ -121,7 +130,7 @@ def showc(sub):
     print("Today's schedule : ")
 
     for task_id , task , complete in tasks:
-        status = "completed" if "completed" else "Incomplete"
+        status = "completed" if complete else "Incomplete"
         print(task_id,task,"-",status)
 
 
