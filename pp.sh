@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT="/mnt/Apps/Project_bin/Practice Problems/"
+PROJECT="/mnt/Apps/Project_bin/Practice_Problems/"
 cd "$PROJECT" || exit
 while true
 	do
