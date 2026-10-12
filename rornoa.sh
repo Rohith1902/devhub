@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ECHO "WELCOME TO MY TERMINAL"
+echo "WELCOME TO MY TERMINAL"
 source pqc.sh
 
 
@@ -30,7 +30,7 @@ do
 			echo "9.Resume"
 			echo "10.Vehicle design"
 			echo "11.AI For Chip Design - BMS"
-			echo "12.Resume Project 567890"
+			echo "12.Project 567890"
 			echo "13.Exit"
 		echo "Luckiest dynasty to enter : "
 		read choice
@@ -242,6 +242,8 @@ do
 		elif [ "$choice" -eq 8 ]; then
 			echo "Welcome to practice battlefield "
 			source pp.sh
+		elif [ "$choice" -eq 9 ]; then
+			source resume_build.sh
 		elif [ "$hcoice" -eq 11 ]; then
 			source ai_chip.sh
 		elif [ "$choice" -eq 12]; then
