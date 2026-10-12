@@ -76,11 +76,11 @@ def block():
 
                     """
 
-                    cusrsor.execute(sql,(datetime.date.today(),))
+                    cursor.execute(sql,(datetime.date.today(),))
                     tasks = cursor.fetchall()
                     print("Today's Schedule")
 
-                    for taks_id, task,complete in tasks:
+                    for task_id, task,complete in tasks:
                         print(task_id,task)
                     while True:
                         comp = int(input("\n Tell me which index you completed today (0 for complete): "))
@@ -120,7 +120,7 @@ def showc(sub):
         print(i)'''
     #--------------------------------MYSQL---------------------------
     sql = """
-        SELECT id , task ,completed
+        SELECT id , tasks ,completed
         FROM daily_tasks
         WHERE task_date = %s    
     """

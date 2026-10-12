@@ -21,11 +21,11 @@ do
 		do
 			echo "1.Git "
 			echo "2.Intern"
-			echo "3.AI Agents "
+			echo "3.Quantum "
 			echo "4.PQC"
 			echo "5.Verilog"
-			echo "6.RTPY"
-			echo "7.Class hub"
+			echo "6.RTPY"   #Need to remove
+			echo "7.Class hub" 
 			echo "8.Practice Problems"
 			echo "9.Resume"
 			echo "10.Vehicle design"
@@ -104,15 +104,7 @@ do
         done
 
 		elif [ "$choice" -eq 3 ] ; then
-        
-			echo "\n\n🛡️ Agents online. "
-			echo "Agents starting "
-			echo "⚡ Welcome back, Commander."
-			echo "Files are loading \n\n"
-			echo "Sucessfully loaded "
-
-			source ai_agent.sh
-			ai_files		
+			source quant.sh
 		
 		
 		elif [ "$choice" -eq 4 ]; then
@@ -136,6 +128,7 @@ do
 
 			echo "1.PYQ"
 			echo "2.Files "
+			
 
 			if [ "$choice" -eq 1 ]; then
 

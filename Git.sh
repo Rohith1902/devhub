@@ -1,4 +1,8 @@
 git_repo_creation(){
+    echo "Which project you need to "
+    read direc
+    sleep 2
+    cd "$direc" || return 1
     git init
     git add .
     echo "Enter the First commit message : ";
@@ -13,6 +17,10 @@ git_repo_creation(){
 
 }
 git_push(){
+    echo "Which project you need to "
+    read direc
+    cd "$direc" || return 1
+    sleep 2
     echo "Enter the commit message : "
     read commit 
     git status
