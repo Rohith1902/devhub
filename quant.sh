@@ -11,7 +11,8 @@ while true
                 1.Generate the session material 
                 2.See the Designs already created 
                 3.Open the designs to work
-                4.Exit
+                4.Push the design
+                5.Exit
         "
         echo "Enter your choice : "
         read choice
@@ -23,6 +24,9 @@ while true
         elif [ "$choice" -eq 3 ]; then
             codium "$PROJECT"
         elif [ "$choice" -eq 4 ]; then
+            source Git.sh
+            git_push
+        elif [ "$choice" -eq 5 ]; then
             break
         else 
             echo "Enter a valid choice"

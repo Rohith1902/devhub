@@ -7,7 +7,7 @@ source pqc.sh
 while true
 do
 	echo "OKAERIII !!! SENCHOO \n\n\n"
-	echo "1.All projects"
+	echo "1.All projects"  
 	echo "2.Projects track"
 	echo "3.To create or search a Directory or file"
 	echo "4.TO_DO List"
@@ -19,18 +19,18 @@ do
 	if [ "$choice" -eq 1 ]; then
 		while true
 		do
-			echo "1.Git "
-			echo "2.Intern"
-			echo "3.Quantum "
-			echo "4.PQC"
-			echo "5.Verilog"
+			echo "1.Git "    #done
+			echo "2.    "
+			echo "3.Quantum "  #done
+			echo "4.PQC"     #only opens files
+			echo "5.Verilog"  # done - automatic verilog simulation done
 			echo "6.RTPY"   #Need to remove
-			echo "7.Class hub" 
-			echo "8.Practice Problems"
-			echo "9.Resume"
-			echo "10.Vehicle design"
-			echo "11.AI For Chip Design - BMS"
-			echo "12.Project 567890"
+			echo "7.Class hub"  #Future plans
+			echo "8.Practice Problems"  #Big to do 
+			echo "9.Resume"  # done via AI
+			echo "10.Vehicle design"   
+			echo "11.AI For Chip Design - BMS" 
+			echo "12.Project 567890"  
 			echo "13.Exit"
 		echo "Luckiest dynasty to enter : "
 		read choice

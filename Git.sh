@@ -17,16 +17,13 @@ git_repo_creation(){
 
 }
 git_push(){
-    echo "Which project you need to "
-    read direc
-    cd "$direc" || return 1
-    sleep 2
+    
+    
     echo "Enter the commit message : "
     read commit 
     git status
     git add .
     git commit -m "$commit"
-    git push -u origin main
     echo "Suceesfully pushed"
 
 }

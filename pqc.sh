@@ -1,7 +1,7 @@
 
 pqc_arch1(){
     dolphin "/mnt/Apps/Project_bin/PYQ/Code/PQC - BEST - ARCH 1/"
-	xdg-open "https://github.com/Rohith1902/AI-TRACKING-PQC-SYSTEM"
+	#xdg-open "https://github.com/Rohith1902/AI-TRACKING-PQC-SYSTEM"
 }
 
 

@@ -50,17 +50,22 @@ while true
                         cd "$PROJECT/SystemVerilog" || continue
                         cd ./"$(ls -td | head -n 1)"
                         ls
-                        echo "Name the top module and testbench to simulate (one by one) : "
+                        echo "Name of the folder : "
                         read veri
-                        sleep 2
+                        cd "$PROJECT/SystemVerilog/$veri"
+                        ls -l
+                        echo "Enter the name of the top module : "
+                        read mod
+                        echo "Enter the name of the testbench : "
                         read tb
+                        
 
-                        iverilog -g2012 -o sim "$veri" "$tb"
+                        iverilog -g2012 -o sim "$veri".sv "$tb".sv
                         vvp sim
 
                         cd "$PROJECT"
                         echo "Done"
-                elif [ "$choice" -eq 4 ];then
+                elif [ "$subchoice" -eq 4 ];then
                     echo "All the files are simulated and verified gracefully"
                     break
                 

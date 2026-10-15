@@ -5,7 +5,8 @@ while true
 				2.Quartus
 				3.Xilinx
 				4.Project files
-				5.Exit
+				5.Verilog quick test
+				6.Exit
 			
 			
 			"
@@ -16,12 +17,40 @@ while true
 				vsim -gui &
 
             elif [ "$choice" -eq 2 ];then
-				echo "Not yet completed "
+				quartus/bin/quartus &
             elif [ "$choice" -eq 3 ];then
-				echo "Not yet completed "
+				echo "Xilinx is not available "
             elif [ "$choice" -eq 4 ];then
-				dolphin "/mnt/Apps/Project_bin/Verilog/" &
-				 
+				dolphin "/mnt/Apps/Project_bin/VERILOG/" &
+			elif [ "$choice" -eq 5 ]; then
+				cd /mnt/Apps/Project_bin/VERILOG/
+				echo "Welcome to Verilog automatic simulation"
+
+				FILE="session.sv"
+
+				echo "Write your code below (EOF to end) : "
+				: > "$FILE"
+				
+				while IFS= read -r line;
+				do
+					[[ "$line" == "EOF" ]] && break
+					printf '%s\n' "$line" >> "$FILE"
+				done
+
+				echo "Your design is saved"
+				if iverilog -g2012 -o sim session.sv; then
+					echo "Compilaion successful"
+					if vvp sim ; then
+						sleep 2
+						echo "Simulation successful"
+					else
+						echo "Simulation Failed"
+					fi
+				else 
+					echo "Compilation failed"
+				
+				fi
+				: > "$FILE"
             else 
                 break
             fi
