@@ -27,6 +27,7 @@ while true
             git_push
         else 
             echo "Xiexie !!"
+            break
 
 
 
