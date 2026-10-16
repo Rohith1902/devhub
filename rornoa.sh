@@ -20,7 +20,7 @@ do
 		while true
 		do
 			echo "1.Git "    #done
-			echo "2.    "
+			echo "2.To Develop the sys"
 			echo "3.Quantum "  #done
 			echo "4.PQC"     #only opens files
 			echo "5.Verilog"  # done - automatic verilog simulation done
@@ -76,32 +76,7 @@ do
 
 
 		elif [ "$choice" -eq 2 ]; then
-			echo "\n\nGenkai wo koeraaaa \n\n\n"
-
-			while true
-			do
-
-				echo "1.Diveeee  "
-				echo "2.Track  "
-				echo "3.Exit"
- 			echo "Want to play or just rest : "
-			read choice
-
-			if [ "$choice" -eq 1 ]; then
-
-				echo "Hearrr meee Roarrrr !!"
-
-				file="/mnt/Apps/Project_bin/intern/INTERN-ME-command-center-day-reset.html"
-				cat "$file"
-
-			elif [ "$choice" -eq 2 ]; then
-
-				echo "Yukkuri 😌🍃"
-
-			elif [ "$choice" -eq 3 ]; then
-				break
-			fi
-        done
+			source bin.sh
 
 		elif [ "$choice" -eq 3 ] ; then
 			source quant.sh
