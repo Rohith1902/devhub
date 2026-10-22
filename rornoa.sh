@@ -219,9 +219,9 @@ do
 			source pp.sh
 		elif [ "$choice" -eq 9 ]; then
 			source resume_build.sh
-		elif [ "$hcoice" -eq 11 ]; then
+		elif [ "$choice" -eq 11 ]; then
 			source ai_chip.sh
-		elif [ "$choice" -eq 12]; then
+		elif [ "$choice" -eq 12 ]; then
 			source prj.sh
 		elif [ "$choice" -eq 13 ]; then
 			break
